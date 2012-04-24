@@ -1,0 +1,12 @@
+Yet Another JSON Converter
+--------------------------
+
+Some unit and integration test cases in yajc.erl
+
+Lazy aid tryout:
+$ rebar compile
+$ ./test.sh
+
+Usage:
+  yajc:j2e("{\"foo\":\"bar\"}").
+  yajc:e2j([{foo,<<"bar">>}]).
