@@ -1,7 +1,7 @@
-Header "%% Copyright (C) K2 Informatics GmbH"
+Header "%% Copyleft"
 "%% @private"
 "%% @Author Bikram Chatterjee"
-"%% @Email bikram.chatterjee@k2informatics.ch".
+"%% @Email razorpeak@gmail.com".
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
