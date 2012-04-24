@@ -16,9 +16,3 @@ Rules.
 Erlang code.
 
 strip_quotes(StrChars) -> list_to_binary(string:substr(StrChars, 2, string:len(StrChars) - 2)).
-
-list_to_num(NumStr) ->
-    PointIdx = string:chr(NumStr, $.),
-    if PointIdx > 0 -> list_to_float(NumStr);
-    true -> list_to_integer(NumStr)
-    end.
