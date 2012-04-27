@@ -16,3 +16,24 @@ Rules.
 Erlang code.
 
 strip_quotes(StrChars) -> list_to_binary(string:substr(StrChars, 2, string:len(StrChars) - 2)).
+
+% Lexer test
+-include_lib("eunit/include/eunit.hrl").
+
+lexer_number_test() ->
+    ?assertMatch({ok, [{'NUMBER', _, 10}], _}, string("10")),
+    ?assertMatch({ok, [{'NUMBER', _, -10}], _}, string("-10")),
+    ?assertMatch({ok, [{'NUMBER', _, 10.1}], _}, string("10.1")),
+    ?assertMatch({ok, [{'NUMBER', _, -10.1}], _}, string("-10.1")),
+    ?assertMatch({ok, [{'NUMBER', _, 1010.0}], _}, string("10.1e2")),
+    ?assertMatch({ok, [{'NUMBER', _, -1010.0}], _}, string("-10.1e2")),
+    ?assertMatch({ok, [{'NUMBER', _, 1.01e11}], _}, string("10.1e10")),
+    ?assertMatch({ok, [{'NUMBER', _, -1.01e11}], _}, string("-10.1e10")),
+    ?assertMatch({ok, [{'NUMBER', _, 1.01e11}], _}, string("+10.1e10")).
+
+lexer_string_test() ->
+    ?assertMatch({ok, [{'STRING', _, <<"abc">>}], _}, string("\"abc\"")),
+    ?assertMatch({error,{_,_,{illegal,_}},_}, string("\"abc \\u1234 \"")).
+
+lexer_obj_test() ->
+    ?assertMatch({ok, [{'{',_},{'STRING',_,<<"a">>},{':',_},{'STRING',_,<<"b">>},{'}',_}], _}, string("{\"a\":\"b\"}")).
