@@ -8,5 +8,5 @@ $ rebar compile
 $ ./test.sh
 
 Usage:
-  yajc:j2e("{\"foo\":\"bar\"}").
-  yajc:e2j([{foo,<<"bar">>}]).
+  yajc:to_erlang("{\"foo\":\"bar\"}").
+  yajc:to_json([{foo,<<"bar">>}]).
