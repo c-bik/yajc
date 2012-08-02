@@ -19,6 +19,7 @@ local.properties
 json_lex.erl
 json_parse.erl
 ebin/*
+.eunit/*
 
 # External tool builders
 .externalToolBuilders/

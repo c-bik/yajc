@@ -1,3 +1,7 @@
+% Copyleft
+% @Author Bikram Chatterjee
+% @Email razorpeak@gmail.com
+
 Definitions.
 
 D = [0-9]
