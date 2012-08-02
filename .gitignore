@@ -16,6 +16,9 @@ local.properties
 .settings/
 .loadpath
 *.beam
+json_lex.erl
+json_parse.erl
+ebin/*
 
 # External tool builders
 .externalToolBuilders/
